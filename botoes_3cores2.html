@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muda cor II</title>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+        const h1 = document.getElementsByTagName('h1')[0]
+        // retorna um NodeList com funções
+        const botoes = document.querySelectorAll('button')
+
+        // função forEach faz parte de um NodeList
+        botoes.forEach(btn => {
+            //btn.onclick = () => {
+
+            btn.addEventListener('click', () => {
+                btn.style.color = btn.dataset.cor
+                h1.innerText = btn.innerText.toUpperCase()
+                h1.style.color = btn.dataset.cor
+             })
+        })
+       
+    })
+
+    </script>
+
+</head>
+<body>
+
+    <h1>Hello World</h1>
+    <button data-cor="red">Vermelho</button>
+    <button data-cor="green">Verde</button>
+    <button data-cor="blue">Azul</button>
+
+    
+</body>
+</html>

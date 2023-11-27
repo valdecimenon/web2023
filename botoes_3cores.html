@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muda a Cor</title>
+
+    <script>
+
+        function mudaCor(botao){
+            const cor = botao.id
+            botao.style.color = cor
+            const texto = document.getElementsByTagName("h1")[0]
+            texto.innerText = botao.innerText.toUpperCase()
+            texto.style.color = cor
+        }
+
+    </script>
+  
+
+</head>
+<body>
+
+    <h1>Hello World</h1>
+    <button onclick="mudaCor(this)" id="red">Vermelho</button>
+    <button onclick="mudaCor(this)" id="blue">Azul</button>
+    <button onclick="mudaCor(this)" id="green">Verde</button>
+    <button onclick="mudaCor(this)" id="orange">Laranja</button>
+
+</body>
+</html>
