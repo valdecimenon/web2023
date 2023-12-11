@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header {
+    background: #4852ec;
+    padding-inline: 16px;  /*  horizontal: esq e direita  */
+}
+
+/*
+    VGA: 640 x 480p
+    HD: 1280 x 720p
+    Full HD: 1920 x 1080p
+*/
+.nav {
+    height: 70px;
+    max-width: 1280px;   /* largura da barra de navegação */
+    /* centraliza a barra de navegação  */
+    margin-inline: auto;  /* margin left e right automática  */
+
+    /* usa exibição flex para posicionar os elementos dentro do nav */
+    /* alinhamento padrão = row = linha */
+    display: flex;
+    /*  centraliza elementos dentro da barra nav */
+    /* posicionamento horizontal */
+    justify-content: space-between;
+    /* posicionamento vertical*/
+    align-items: center;
+}
+
+.logo-softgraf {
+    width: 145px;
+}
+
+/* menu de opções */
+.nav-list {
+    display: flex; /*  flex-direction padrão = row */
+    gap: 32px;
+    list-style: none;  /* remove o marcador do li  */
+}
+
+/* links (tag a) dentro de cada li */
+.nav-list a {
+    color: #fff;
+    font-size: 18px;
+    /* aumenta a área vertical do clique */
+    padding-block: 16px;
+}
+
+/*  main - conteudo da página */
+.conteudo {
+    height: calc(100vh - 70px);  /* calcula a altura do conteúdo */
+    background: center / cover url(bg.jpg);
+}
+
+/* botão hamburger */
+.hamburger {
+    display: none;   /* none = esconde */
+    background: none;
+    border: none;
+    /* cria a linha superior do hamburger */
+    border-top: 3px solid #fff;
+    cursor: pointer;
+}
+
+/* pseudo seletores: after e before */
+.hamburger::after,
+.hamburger::before {
+    content: " ";
+    background: #fff;
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin-top: 5px;
+
+    position: relative;
+}
+
+/* media queries para mobile */
+@media (max-width: 576px){   /* tamanho small do bootstrap */
+
+    .hamburger {
+        /* exibe o botão hamburger */
+        display: block;  
+        z-index: 1;
+    }
+
+    /* posicionamentos para display block (padrão)
+        position:
+        - static (padrão): segue o fluxo juntos com outros elementos da página,
+                           tendo o canto superior esquerdo como referência.
+        - fixed: fixo em relação à tela, não permite que o elemento se mova.
+        - sticky (pegajoso): fixo em relação ao rolamento da página.
+        - relative: permite deslocar o elemento em relação à sua posição inicial.
+        - absolute: posiciona o elemento filho em relação ao pai ou em relação à tela.
+    */
+    .nav-list {
+        /* reposiciona nav-list para mobile apenas */
+        position: fixed;
+        top: 0;
+        left: 0;
+        /* usa o tamanho máxima da tela */
+        width: 100vw;
+        height: 100vh;
+
+        /* exibe os itens do menu em coluna */
+        flex-direction: column;
+        background-color: #4852ec;
+        /*  alinhamento vertical */
+        justify-content: space-around;
+        /* alinhamento horizontal  */
+        align-items: center;
+        gap: 0;
+
+        /* desativa cliques em elementos ocultos */
+        pointer-events: none;
+
+        clip-path: circle(100px at 90% -15%);
+        transition: 1s ease-out;  /* ease-out = com final lento */
+    }
+
+    .nav-list a {
+        font-size: 24px;
+        /* esconde os links do menu antes do hamburger ser clicado */
+        opacity: 0;
+    }
+
+    
+
+}
+
