@@ -59,8 +59,8 @@ a {
     background: center / cover url(bg.jpg);
 }
 
-/* botão hamburger */
-.hamburger {
+/* botão hamburguer */
+.hamburguer {
     display: none;   /* none = esconde */
     background: none;
     border: none;
@@ -70,8 +70,8 @@ a {
 }
 
 /* pseudo seletores: after e before */
-.hamburger::after,
-.hamburger::before {
+.hamburguer::after,
+.hamburguer::before {
     content: " ";
     background: #fff;
     display: block;
@@ -85,8 +85,8 @@ a {
 /* media queries para mobile */
 @media (max-width: 576px){   /* tamanho small do bootstrap */
 
-    .hamburger {
-        /* exibe o botão hamburger */
+    .hamburguer {
+        /* exibe o botão hamburguer */
         display: block;  
         z-index: 1;
     }
@@ -127,11 +127,55 @@ a {
 
     .nav-list a {
         font-size: 24px;
-        /* esconde os links do menu antes do hamburger ser clicado */
+        /* esconde os links do menu antes do hamburguer ser clicado */
         opacity: 0;
     }
 
     
+    .nav-list li:nth-child(1) a{
+        transition: 0.5s 0.2s ease-in-out;
+    }
+
+    .nav-list li:nth-child(2) a{
+        transition: 0.5s 0.4s ease-in-out;
+    }
+
+    .nav-list li:nth-child(3) a{
+        transition: 0.5s 0.6s ease-in-out;
+    }
+
+
+     /* Estilos ativos (active): Desenha o X do botão hamburguer  */
+    .nav.active .hamburguer{
+        position: fixed;
+        top: 26px;
+        right: 16px;
+        /* esconde a linha do topo do hamburguer */
+        border-top-color: transparent;
+    }
+
+    /* rotaciona a linha intermediária do  hamburger  */
+    .nav.active .hamburguer::before {
+        transform: rotate(135deg);
+    }
+
+      /* rotaciona a linha inferior do  hamburger  */
+    .nav.active .hamburguer::after {
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+
+    .nav.active .nav-list {
+        /* circulo cobre toda a tela */
+        clip-path: circle(1500px at 90% -15%);
+        /* permite acessar todos os recursos da tela */
+        pointer-events: all;
+    }
+
+    .nav.active .nav-list a{
+        /* mostra os links do menu */
+        opacity: 1;
+    }
 
 }
 
