@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: monospace;
+    color: #333;
+    margin: 20px 100px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.25em;
+    margin-top: 50px;
+}
+
+
+section > div {
+    background: tomato;
+    margin: 5px;
+    text-align: center;
+    font-size: 1.5em;
+    border: 1px solid black;
+}
+
+.grid-1-coluna {
+    display: grid;  /* ou inline-grid */
+    background: lightgreen;
+}
+
+.grid-2-colunas {
+    display: grid;
+    background: lightgreen;
+    /*                  coluna1  coluna2  */
+    grid-template-columns: 300px 600px;
+}
+
+.grid-4-colunas {
+    display: grid;
+    background: lightgreen;
+    /*                     col1  col2   col3  col4 */
+    grid-template-columns: 200px 300px 400px 500px;
+}
+
+.grid-6-colunas {
+    display: grid;
+    background: lightgreen;
+    /*                     col1  col2   col3  col4  col5  col6*/
+    grid-template-columns: 200px 200px 200px 200px 200px 200px;
+}
+
+
+.grid-4-colunas-percentual {
+    display: grid;
+    background: lightgreen;
+    /*                     col1  col2   col3  col4 */
+    grid-template-columns: 10%   25%    25%    10%
+}
+
+.grid-4-colunas-auto {
+    display: grid;
+    background: lightgreen;
+    /*                     col1  col2  col3  col4 */
+    grid-template-columns: auto  auto  auto  auto;
+}
+
+.grid-3-colunas-auto {
+    display: grid;
+    background: lightgreen;
+    /*                     col1   col2  col3 */
+    grid-template-columns: 300px  auto  300px;
+}
+
+/* unidade fracional */
+.grid-3-colunas-fracional {
+    display: grid;
+    background: lightgreen;
+    /*                     col1   col2  col3 */
+    grid-template-columns:  1fr   2fr   1fr
+}
+
+.grid-3-colunas-fracional-minmax {
+    display: grid;
+    background: lightgreen;
+    /*                                   col1   col2  col3 */
+    grid-template-columns:  minmax(200px, 2fr)   1fr   1fr
+}
+
+.grid-repeat-3 {
+    display: grid;
+    background: lightgreen;
+    /*                      col1   col2  col3 */
+    grid-template-columns:  repeat(3, 1fr);
+
+    /* grid-template-columns:  repeat(3, 250px);  */
+}
+
+.grid-repeat-fit {
+    display: grid;
+    background: lightgreen;
+    /*          calcula o número de colunas com mínimo de 200px */
+    grid-template-columns:  repeat(auto-fit, minmax(200px, auto));
+}
+
+/* criando uma subgrade */
+.subgrid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 10px;
+}
+
+.subgrid > div {
+    background-color: rgba(117, 71, 255, 0.401);
+    color: white;
+    border: 1px solid black;
+}
