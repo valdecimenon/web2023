@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação - Bootstrap 5.3.x</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="#">
+                <img src="https://softgraf.com/cursoweb/mundoverde/logo-header.png" style="height: 90px;">
+            </a>
+
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contato</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Produtos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Cereais Integrais</a></li>
+                            <li><a class="dropdown-item" href="#">Suplementos</a></li>
+                            <li><a class="dropdown-item" href="#">Temperos</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Sobre</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Promoção</a>
+                    </li>
+                </ul>
+
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="código do produto">
+                    <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+                </form>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <div id="carousel" class="carousel slide container w-50">
+
+        <div class="carousel-indicators">
+            <button data-bs-target="#carousel" data-bs-slide-to="0" class="active"></button>
+            <button data-bs-target="#carousel" data-bs-slide-to="1"></button>
+            <button data-bs-target="#carousel" data-bs-slide-to="2"></button>
+            <button data-bs-target="#carousel" data-bs-slide-to="3"></button>
+            <button data-bs-target="#carousel" data-bs-slide-to="4"></button>
+            <button data-bs-target="#carousel" data-bs-slide-to="5"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://softgraf.com/img/img1.jpg" class="d-block w-100">
+            </div>
+
+            <div class="carousel-item">
+                <img src="https://softgraf.com/img/img2.jpg" class="d-block w-100">
+            </div>
+
+            <div class="carousel-item">
+                <img src="https://softgraf.com/img/img3.jpg" class="d-block w-100">
+            </div>
+
+            <div class="carousel-item">
+                <img src="https://softgraf.com/img/img4.jpg" class="d-block w-100">
+            </div>
+
+            <div class="carousel-item">
+                <img src="https://softgraf.com/img/img5.jpg" class="d-block w-100">
+            </div>
+
+            <div class="carousel-item">
+                <img src="https://softgraf.com/img/img6.jpg" class="d-block w-100">
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" data-bs-target="#carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next" data-bs-target="#carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+
+    <div class="d-flex my-3">
+        <div class="mx-auto">
+            <ul class="pagination">
+                <li class="page-item disabled"><a href="#" class="page-link">Anterior</a></li>
+                <li class="page-item"><a href="#" class="page-link">1</a></li>
+                <li class="page-item active"><a href="#" class="page-link">2</a></li>
+                <li class="page-item"><a href="#" class="page-link">3</a></li>
+                <li class="page-item"><a href="#" class="page-link">Próximo</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="text-center my-3">
+        <button class="btn btn-secondary" data-bs-toggle="offcanvas" data-bs-target="#painel">Mostrar Painel
+            Lateral</button>
+    </div>
+
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="painel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title text-primary" id="painel">Titulo do painel</h5>
+            <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body h6 text-secondary">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias saepe odit nobis in earum nisi totam
+                inventore doloremque ut quae reprehenderit, culpa, eveniet numquam quo non omnis, adipisci enim
+                perspiciatis!</p>
+            <img src="https://softgraf.com/img/img6.jpg" class="d-block w-100">
+        </div>
+    </div>
+
+    <!-- Button trigger modal -->
+    <div class="text-center my-3">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Abre a janela modal
+        </button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal Titulo</h1>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="text-center">
+                        <img src="https://softgraf.com/cursoweb/mundoverde/logo-header.png">
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, voluptate nemo. Corrupti culpa
+                        minus harum soluta eligendi ullam, aliquid quos maxime consequatur accusantium est eaque,
+                        repellendus quidem illum. Aperiam, voluptatum!</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button class="btn btn-primary">Entendi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-3">
+        <p class="fs-6 fw-medium">Copyright <i class="bi bi-c-circle"></i> 2024 - Valdeci Menon</p>
+    </footer>
+
+</body>
+
+</html>
